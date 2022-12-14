@@ -1,0 +1,378 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap');
+*{
+    padding:0;
+    margin:0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background: #f7f7f7;
+    font-family: 'Poppins', sans-serif;
+}
+
+header{
+    background-color: #FFFFFF;
+    box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 10%);
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    max-width:1370px;
+    margin:0 auto;
+    padding:20px;
+}
+
+nav .logo{
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #0E2431;
+}
+
+nav ul{
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li{
+    list-style: none;
+    padding:5px 12px;
+    margin-left:20px;
+}
+
+nav ul li a{
+    position: relative;
+    text-decoration: none;
+    color:#0E2431;
+    text-transform: capitalize;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+
+}
+
+nav ul li a::before, nav ul li a::after{
+    content: "";
+    position:absolute;
+    width: 0%;
+    height:2px;
+    background-color: #0E2431;
+    transition: 0.4s ease-in-out;
+
+}
+
+nav ul li a::before{
+    top:-5px;
+    left:0;
+}
+
+nav ul li a::after{
+    bottom:-5px;
+    right: 0;
+}
+
+nav ul li a:hover::before, nav ul li a:hover::after{
+    width: 100%;
+    transition: 0.4s ease-in-out;
+}
+
+#hamburger{
+    background-color: transparent;
+    border-radius:4px;
+    border: none;
+    user-select: none;
+    outline: none;
+    cursor:pointer;
+    display: none;
+}
+
+#hamburger .line{
+    transition:
+    y 300ms ease-in 300ms,
+    rotate 300ms ease-in,
+    opacity 0ms 300ms
+    ;
+    transform-origin: center;
+}
+
+
+#hamburger .showAnim .line{
+    transition:
+    y 300ms ease-in,
+    rotate 300ms ease-in 300ms,
+    opacity 0ms 300ms
+    ;
+
+    
+}
+
+#hamburger.showAnim :is(.top, .bottom){
+    y: 50;
+}
+
+#hamburger.showAnim .top{
+    rotate:45deg;
+}
+
+#hamburger.showAnim .bottom{
+    rotate: -45deg;
+}
+
+#hamburger.showAnim .middle{
+    opacity: 0;
+}
+
+
+@media(max-width:990px){
+    #hamburger{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height:100%;
+    }
+    nav ul{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top:-38%;
+        background-color: #fff;
+        width:100%;
+        text-align: left;
+        left:0%;
+        transition: 0.4s ease-in-out;
+
+    }
+    nav ul li{
+        padding:20px 12px;
+        margin-left: 0px!important;
+    }
+    .showUl{
+        top:7.5%;
+        transition: 0.4s ease-in-out;
+    }
+    .flex{
+        text-align: center;
+        padding:20px;
+        min-height: 70vh!important;
+    }
+    .bannerRight{
+        display: none;
+    }
+    .about .flex{
+        flex-direction: column!important;
+    }
+    .imageAbout img{
+        width: 100% !important;
+    }
+
+}
+
+/* Section 1 */
+.banner{
+    width:100%;
+    min-height:80vh;
+    background-image: url('https://media-s3-us-east-1.ceros.com/citywire/images/2021/12/02/0a922383c665377ba2322fd9be9d0b28/opening-page-graphic.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: inset 0 0 0 2000px rgb(0 0 0 / 10%);
+}
+
+
+
+.container{
+    max-width:1170px;
+    margin:0 auto;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+    flex-direction: row;
+    min-height:70vh;
+    color:#fff;
+}
+
+.mr-4{
+    margin:10px 0;
+}
+
+
+.mr-8{
+    margin:20px 0;
+}
+
+.titleBanner{
+    font-size:44px;
+    color:#002057;
+    letter-spacing: 1px;
+
+}
+
+.sub-title{
+    font-size:18px;
+    letter-spacing: 1px;
+    color:#002057;
+}
+
+.img{
+    border-radius: 50%;
+    width:450px;
+    height:350px;
+}
+
+.btn{
+    padding:10px 16px;
+    border-radius:20px;
+    outline: none;
+    border:none;
+    cursor:pointer;
+    font-size:17px;
+    width:150px;
+    text-transform: capitalize;
+}
+
+.btn-banner{
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+}
+
+
+.btn-banner:hover {
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    border:none;
+    transform: translateY(-7px);
+  }
+
+  .social-media{
+    display: flex;
+    color:black;
+    list-style: none;
+    flex-wrap: wrap;
+  }
+
+
+
+.social-media li{
+    padding:8px 16px;
+    width: 50px;
+    height:50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:22px;
+    border:none;
+    background-color: #002057;
+    border-radius:50%;
+    margin:10px;
+    transition: 0.4s ease;
+    cursor:pointer;
+    color:#00D9FF;
+
+}
+
+.social-media li:hover{
+    transform: scale(1.1);
+    transition: 0.4s ease;
+}
+
+.arrow{
+    display: flex;
+    justify-content: center;
+    transform: translateY(-50px);
+}
+
+.arrow i{
+    animation: down 1.5s ease-in infinite;
+    padding:8px 16px;
+    width: 50px;
+    height:50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:22px;
+    background-color: #002057;
+    border-radius:50%;
+    color:#fff;
+    cursor:pointer;
+}
+
+@keyframes down {
+    0%{
+        transform: translateY(-50px);
+    }
+    50%{
+        transform:translateY(20px);
+    }
+    100%{
+        transform: translateY(-50px);
+    }
+}
+
+.typer{
+    text-transform: capitalize;
+    color:#991515!important;
+    font-weight: bold;
+}
+
+/* About */
+.about, .contact{
+    min-height: 70vh;
+    background-color: #fff;
+    padding:20px;
+}
+
+.about .flex{
+    display: flex;
+    flex-direction: row;
+    color:black;
+}
+
+.aboutText{
+    padding:20px;
+    margin-top:40px;
+    text-transform:capitalize;
+}
+
+.imageAbout{
+    max-width: 100%;
+}
+.imageAbout img{
+    width:450px;
+}
+
+section .title{
+    text-align: center;
+    font-size:28px;
+    color:#000;
+    padding-top:50px;
+    margin-top:30px;
+}
+
+section .title i{
+    margin-right:20px;
+}
+
+section .title span{
+    color:#002057;
+}
+
+
+footer{
+    width: 100%;
+    bottom:100%;
+    padding:20px;
+    text-align: center;
+}
+
